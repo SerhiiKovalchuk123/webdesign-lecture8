@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Тарифи вебсервісу | PlanLab</title>
+  <meta name="description" content="Навчальний макет хмарного сервісу PlanLab: тарифи, командна робота та спільні проєкти.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="site-header" id="top">
+      <a class="brand" href="#top" aria-label="PlanLab — на початок сторінки">PlanLab</a>
+      <nav aria-label="Головна навігація">
+        <ul class="site-nav">
+          <li><a href="#plans">Тарифи</a></li>
+          <li><a href="#features">Можливості</a></li>
+          <li><a href="#contacts">Контакти</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">ІНФОРМАЦІЙНІ СИСТЕМИ · ВЕБСЕРВІСИ</p>
+        <h1 id="page-title">Тариф під задачі вашої команди</h1>
+        <p class="hero-copy">Плануйте роботу, зберігайте файли та стежте за проєктами в одному місці. Оберіть пакет, з якого зручно почати.</p>
+        <a class="text-link" href="#plans">Порівняти тарифи <span aria-hidden="true">↓</span></a>
+      </section>
+
+      <section class="plans" id="plans" aria-labelledby="plans-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">ПРОСТІ УМОВИ</p>
+            <h2 id="plans-title">Пакети для роботи</h2>
+          </div>
+          <p>Ціни наведені за місяць. Змінити пакет можна будь-коли.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <p class="card-label">Для старту</p>
+            <h3>Базовий</h3>
+            <p class="card-copy">Потрібні інструменти для особистих задач і невеликої команди.</p>
+            <p class="price"><span>0</span> грн <small>/ місяць</small></p>
+            <ul class="feature-list">
+              <li>До 3 учасників</li>
+              <li>5 активних проєктів</li>
+              <li>Спільні нотатки</li>
+            </ul>
+            <button class="button button--quiet" type="button" data-plan="Базовий" aria-pressed="false">Обрати пакет</button>
+          </article>
+
+          <article class="card card--featured">
+            <p class="card-label">Найпопулярніший</p>
+            <h3>Команда</h3>
+            <p class="card-copy">Коли потрібно вести кілька проєктів і працювати разом.</p>
+            <p class="price"><span>249</span> грн <small>/ місяць</small></p>
+            <ul class="feature-list">
+              <li>До 10 учасників</li>
+              <li>Необмежені проєкти</li>
+              <li>Спільний календар</li>
+            </ul>
+            <button class="button" type="button" data-plan="Команда" aria-pressed="false">Обрати пакет</button>
+          </article>
+
+          <article class="card">
+            <p class="card-label">Для великих команд</p>
+            <h3>Профі</h3>
+            <p class="card-copy">Додаткові налаштування для компаній зі складнішими процесами.</p>
+            <p class="price"><span>499</span> грн <small>/ місяць</small></p>
+            <ul class="feature-list">
+              <li>До 30 учасників</li>
+              <li>Ролі та доступи</li>
+              <li>Пріоритетна підтримка</li>
+            </ul>
+            <button class="button button--quiet" type="button" data-plan="Профі" aria-pressed="false">Обрати пакет</button>
+          </article>
+        </div>
+        <p class="selection-status" id="selection-status" role="status" aria-live="polite">Пакет ще не обрано.</p>
+      </section>
+
+      <section class="features" id="features" aria-labelledby="features-title">
+        <p class="eyebrow">ЩОДЕННА РОБОТА</p>
+        <p><span class="badge badge--it">Інформаційні системи</span> <span class="badge badge--law">Право</span> <span class="badge badge--marketing">Маркетинг</span></p>
+        <h2 id="features-title">Усе важливе зібрано разом</h2>
+        <div class="feature-points">
+          <p><strong>Зрозумілий план.</strong> Бачте наступні кроки й відповідальних.</p>
+          <p><strong>Спільна робота.</strong> Команда може оновлювати проєкти разом.</p>
+          <p><strong>Менше пошуку.</strong> Нотатки й посилання зберігаються поруч із задачами.</p>
+        </div>
+      </section>
+    </main>
+
+    <aside class="sidebar" id="contacts" aria-labelledby="contacts-title">
+      <p class="eyebrow">Є ПИТАННЯ?</p>
+      <h2 id="contacts-title">Підкажемо з вибором</h2>
+      <p>Напишіть нам, якщо треба підібрати пакет для вашої команди.</p>
+      <a class="contact-link" href="mailto:hello@planlab.example">hello@planlab.example</a>
+      <div class="sidebar-note">
+        <h3>Корисні посилання</h3>
+        <ul>
+          <li><a href="#plans">Порівняння пакетів</a></li>
+          <li><a href="#features">Можливості сервісу</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <footer class="site-footer">
+      <p><strong>PlanLab</strong> — навчальний макет вебсервісу.</p>
+      <p>Ковальчук Сергій · Тема 8 · SCSS · 2026</p>
+    </footer>
+  </div>
+</body>
+</html>
