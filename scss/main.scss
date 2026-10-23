@@ -1,0 +1,410 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+/* Базові налаштування сторінки */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+picture,
+video {
+  max-width: 100%;
+}
+
+:root {
+  color-scheme: light;
+  --ink: #{v.$ink};
+  --muted: #5f6b80;
+  --line: #dbe2ed;
+  --paper: #f5f7fb;
+  --blue: #{v.$brand};
+  --blue-dark: #2143a7;
+  --mint: #dff3ed;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--blue-dark);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: #142f7d;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #f0a22e;
+  outline-offset: 3px;
+}
+
+h3 {
+  color: #19734b;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "header"
+    "content"
+    "sidebar"
+    "footer";
+  gap: 1.5rem;
+  width: 100%;
+  min-width: 0;
+  padding: 1rem;
+}
+
+.site-header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: v.$radius;
+  background: #fff;
+}
+
+.brand {
+  color: var(--ink);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a {
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.content {
+  grid-area: content;
+  min-width: 0;
+}
+
+.hero,
+.plans,
+.features,
+.sidebar {
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: #fff;
+}
+
+.hero {
+  margin-bottom: 1.5rem;
+  padding: clamp(1.25rem, 4vw, 3rem);
+  background: linear-gradient(135deg, #eef2ff, #fff 65%);
+}
+
+.eyebrow {
+  margin: 0 0 0.6rem;
+  color: var(--blue-dark);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+}
+
+h1 {
+  max-width: 15ch;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.hero-copy {
+  max-width: 48ch;
+  margin: 1rem 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+}
+
+.plans,
+.features,
+.sidebar {
+  padding: 1.25rem;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.section-heading h2,
+.features h2,
+.sidebar h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.section-heading > p {
+  max-width: 32ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: v.$radius;
+  background: #fff;
+  box-shadow: 0 0.5rem 1.5rem rgb(24 35 58 / 5%);
+}
+
+.card--featured {
+  border-color: #92a8ee;
+  background: #f6f8ff;
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+  color: var(--blue-dark);
+  font-size: 1.35rem;
+}
+
+.card-label {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.card-copy {
+  margin: 0;
+  color: var(--muted);
+}
+
+.price {
+  margin: 1rem 0 0.75rem;
+  font-weight: 700;
+}
+
+.price span {
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+}
+
+.price small {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.feature-list {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0 0 1.25rem;
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+
+.button {
+  margin-top: auto;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--blue);
+  border-radius: 0.7rem;
+  background: var(--blue);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.button {
+  &:hover {
+    background: var(--blue-dark);
+    transform: translateY(-1px);
+  }
+}
+
+.button--quiet {
+  background: #fff;
+  color: var(--blue-dark);
+}
+
+.button--quiet:hover {
+  background: var(--mint);
+}
+
+.selection-status {
+  min-height: 1.6em;
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.features {
+  margin-top: 1.5rem;
+}
+
+.features h2 {
+  margin-bottom: 1rem;
+}
+
+.feature-points {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.feature-points p {
+  margin: 0;
+  padding: 0.8rem;
+  border-radius: 0.7rem;
+  background: var(--paper);
+}
+
+.sidebar {
+  grid-area: sidebar;
+  min-width: 0;
+  background: var(--mint);
+}
+
+.sidebar > p:not(.eyebrow) {
+  color: #3d5c55;
+}
+
+.contact-link {
+  overflow-wrap: anywhere;
+  font-weight: 700;
+}
+
+.sidebar-note {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgb(24 35 58 / 15%);
+}
+
+.sidebar-note h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.sidebar-note ul {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 0;
+  padding-left: 1.15rem;
+}
+
+.site-footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding: 0.75rem 0.25rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer strong {
+  color: var(--ink);
+}
+
+@include m.from(v.$bp-md) {
+  .page {
+    grid-template-columns: minmax(0, 2fr) minmax(15rem, 1fr);
+    grid-template-areas:
+      "header header"
+      "content sidebar"
+      "footer footer";
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .plans,
+  .features,
+  .sidebar {
+    padding: 1.5rem;
+  }
+}
+
+@include m.from(v.$bp-xl) {
+  .page {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr) minmax(0, 1fr);
+    grid-template-areas:
+      "header header header"
+      ". content sidebar"
+      "footer footer footer";
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: v.$radius; color: #fff; }
+@each $name, $color in v.$themes {
+  .badge--#{$name} { background: $color; }
+}
+
